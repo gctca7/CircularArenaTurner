@@ -23,7 +23,7 @@ function ArenaInfo = ArenaSetupAutomatic();
 
 
 %% Change directory to folder containing experiment lists (or just start on Desktop)
-cd('/Users/glennturner/Dropbox (HHMI)/Data/BehaviorDataKarenHibbard/Behavior_DataLists')
+cd('/Users/glennturner/Dropbox (HHMI)/Data/BehaviorDataLists')
 % User selects spreadsheet containing experiment names
 [FileName, PathName] = uigetfile('*', 'Select spreadsheet containing experiment names', 'off') ;
 % Return cell array where each cell contains full directory path to folders containing flycounts
@@ -53,7 +53,7 @@ for ExptIdx = 1:length(ExptName)
     
     %% Calculate BackgroundImage
     % Do a Maximum Intensity Projection of a 300 frame chunk of the movie
-    BackgroundStack = load_frames(15*30,30*30,Header,video(1).folder) ;
+    BackgroundStack = load_frames(0.1*30,100*30,Header,video(1).folder) ;
     BackgroundImage = max(BackgroundStack,[],3) ;
     ArenaInfo.BackgroundImage = BackgroundImage ;
     

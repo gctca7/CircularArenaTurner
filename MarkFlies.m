@@ -27,10 +27,11 @@ image = image - BackgroundImage ;
 % Mask out everything outside Arena Border
 % image(ArenaEdge == 0) = 0 ;
 image(~ArenaEdge) = 0 ; 
+BinaryImage = imextendedmax(image,30) ; 
 % Threshold the image based on global image pixel values.  
 % NB Worked better than adaptive thresholding with a uniform image & high contrast flies 
-Threshold = graythresh(image) ;
-BinaryImage = imbinarize (image, Threshold) ; 
+% Threshold = graythresh(image) ;
+% BinaryImage = imbinarize (image, Threshold) ; 
 % Remove any small objects from the binary image
 BinaryImage = bwareaopen(BinaryImage, MinObjectArea);
 % Metrics of detected objects i.e. (ideally) individual flies

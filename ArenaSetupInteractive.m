@@ -20,7 +20,7 @@ function ArenaInfo = ArenaSetupInteractive()
 
 
 %% Change directory to folder containing experiment lists (or just start on Desktop)
-cd('/Users/glennturner/Dropbox (HHMI)/Data/BehaviorDataKarenHibbard/Behavior_DataLists')
+cd('/Users/glennturner/Dropbox (HHMI)/Data/BehaviorDataLists')
 % User selects spreadsheet containing experiment names
 [FileName, PathName] = uigetfile('*', 'Select spreadsheet containing experiment names', 'off') ;
 % Return cell array where each cell contains full directory path to folders containing flycounts
